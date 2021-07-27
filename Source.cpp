@@ -1,9 +1,16 @@
-#include "Calc.h"
+#include "Odin.h"
+using namespace std;
 
 int main()
 {
-	Calc cal(10);
-	cal.add(10).sub(1).mul(2).print();
-	Calc(10).add(10).sub(1).mul(2).print();
+	Odin odin("OdinTheGreat", position2d(0, 0));
 
+	cout << odin << endl;
+
+	{
+		odin.moveTo(position2d(1, 1));
+		cout << odin << endl;
+	}
+
+	return 0;
 }

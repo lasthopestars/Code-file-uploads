@@ -1,36 +1,36 @@
 #pragma once
 #include<iostream>
-//재사용을 위해서 만든 거. 
-//클래스는 멤버를 관리해야 한다.
-using namespace std;
 
-class Position2D
+
+class position2d
 {
 private:
 	int m_x;
 	int m_y;
 
+
 public:
-	Position2D(const int & x_in, const int &y_in)
-		:m_x(x_in),m_y(y_in)
+	position2d(const int &x, const int & y)
+		:m_x(x), m_y(y)
 	{}
 
-	//TODO: overload operator = 
-	void set(const Position2D & pos_target)
+	void set(const position2d &target)
 	{
-		set(pos_target.m_x, pos_target.m_y);
+		set(target.m_x, target.m_y);
 	}
 
-	void set(const int& x_target, const int& y_target) {
+
+	void set(const int & x_target, const int &y_target)
+	{
 		m_x = x_target;
 		m_y = y_target;
+
 	}
 
-	friend std::ostream & operator<<(std::ostream &out, const Position2D &pos2d)
+	friend std::ostream &operator<< (std::ostream & out, const position2d &pos2d)
 	{
-		out << pos2d.m_x << " " << pos2d.m_y << std::endl;
+		out << pos2d.m_x << " " << pos2d.m_y;
 		return out;
-
 	}
 
 };
