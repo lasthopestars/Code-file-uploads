@@ -1,16 +1,15 @@
-#include "Odin.h"
-using namespace std;
+#include"MyArray.h"
+
+
 
 int main()
 {
-	Odin odin("OdinTheGreat", position2d(0, 0));
+	MyArray<double> my_array(10);
 
-	cout << odin << endl;
+	for (int i = 0; i < my_array.getLength(); ++i)
+		my_array[i] = i +65;
 
-	{
-		odin.moveTo(position2d(1, 1));
-		cout << odin << endl;
-	}
+	my_array.print();
 
 	return 0;
 }
